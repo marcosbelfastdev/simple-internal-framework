@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite Teste" parallel="tests" thread-count="1">
+
+<!--    <listeners>-->
+<!--        <listener class-name="base.listeners.BaseListener"/>-->
+<!--    </listeners>-->
+
+
+    <test name="Test Group">
+        <classes>
+            <class name="tests.LoginForcefully"/>
+<!--            <class name="tests.InputDataFailTest"/>-->
+        </classes>
+    </test>
+
+
+<!--    <test name="Test Group 2">-->
+<!--        <classes>-->
+<!--            <class name="tests.LoginForcefully"/>-->
+<!--            <class name="tests.InputDataFailTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+</suite>
