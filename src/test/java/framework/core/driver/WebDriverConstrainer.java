@@ -6,7 +6,7 @@ public class WebDriverConstrainer {
 
     WebDriver driver;
 
-    public WebDriverConstrainer(WebDriver driver, Options options) {
+    public WebDriverConstrainer(WebDriver driver) {
         this.driver = driver;
     }
 
