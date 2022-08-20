@@ -4,11 +4,11 @@ import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import applications.BaseWebApplication;
+import framework.core.browsers.multiple.BaseWebApplicationMultipleBrowsers;
 
 public class SimpleFramework {
 
-    BaseWebApplication aut;
+    BaseWebApplicationMultipleBrowsers aut;
 
     /*
     This test extends a BaseVenturusTest class designed to work with 1 browser.
@@ -20,7 +20,7 @@ public class SimpleFramework {
 
     @BeforeTest
     public void setup(ITestContext context) {
-        aut = new BaseWebApplication(context);
+        aut = new BaseWebApplicationMultipleBrowsers(context);
         aut.startAllBrowsers();
     }
 

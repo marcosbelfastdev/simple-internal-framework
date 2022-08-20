@@ -3,7 +3,7 @@
 <suite name="Suite Teste" parallel="tests" thread-count="1">
 
     <listeners>
-        <listener class-name="internalFramework.listeners.BaseListener"/>
+        <listener class-name="framework.listeners.BaseListener"/>
     </listeners>
 
 
