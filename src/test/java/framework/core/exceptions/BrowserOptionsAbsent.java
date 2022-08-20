@@ -1,6 +1,6 @@
 package framework.core.exceptions;
 
-public class BrowserOptionsAbsent extends Exception {
+public class BrowserOptionsAbsent extends RuntimeException {
 
     public BrowserOptionsAbsent() {
         super(

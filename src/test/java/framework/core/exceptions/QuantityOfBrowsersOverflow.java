@@ -1,6 +1,6 @@
 package framework.core.exceptions;
 
-public class QuantityOfBrowsersOverflow extends Exception {
+public class QuantityOfBrowsersOverflow extends RuntimeException {
 
     public QuantityOfBrowsersOverflow() {
         super(

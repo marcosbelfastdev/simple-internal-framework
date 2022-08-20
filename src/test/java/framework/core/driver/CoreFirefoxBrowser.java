@@ -6,12 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class CoreFirefoxBrowser extends CoreDriver implements ICoreDrivers {
 
-    public CoreFirefoxBrowser(String browserType) {
-        super(browserType);
+    public CoreFirefoxBrowser() {
+        super(BrowserType.FIREFOX);
     }
 
     @Override

@@ -20,7 +20,7 @@ public class Errors {
     }
 
     public static void alert(Class<?> exceptionClass) {
-        printMessage(initClass(exceptionClass));
+        printMessage(initClass(exceptionClass).getMessage());
     }
 
     private static void printMessages(Throwable exception, String message) {

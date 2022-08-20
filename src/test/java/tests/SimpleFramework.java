@@ -1,14 +1,17 @@
 package tests;
 
+import framework.core.browsers.single.BaseBrowser;
+import framework.core.driver.CoreChromeDriver;
+import framework.core.driver.CoreDriver;
+import framework.core.driver.CoreFirefoxBrowser;
+import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import framework.core.browsers.multiple.BaseWebApplicationMultipleBrowsers;
-
 public class SimpleFramework {
 
-    BaseWebApplicationMultipleBrowsers aut;
+    BaseBrowser aut;
 
     /*
     This test extends a BaseVenturusTest class designed to work with 1 browser.
@@ -20,8 +23,20 @@ public class SimpleFramework {
 
     @BeforeTest
     public void setup(ITestContext context) {
-        aut = new BaseWebApplicationMultipleBrowsers(context);
-        aut.startAllBrowsers();
+        CoreFirefoxBrowser firefox = new CoreFirefoxBrowser();
+        CoreChromeDriver chrome = new CoreChromeDriver();
+        chrome
+                .startIncognito()
+                        .allowPopups()
+                                .disableNotifications()
+                                        .enableAutomation()
+                                                .enableSafeBrowsing()
+                                                        .ignoreCertificateErrors()
+                .build();
+        chrome.open();
+        firefox.open();
+
+
     }
 
     /*
@@ -32,7 +47,6 @@ public class SimpleFramework {
     @Test(description = "Demo Test - Test color selection in Treeview")
     public void firstTest() {
         System.out.println("Test is running...");
-        aut.restartCurrentBrowser();
     }
 
 }

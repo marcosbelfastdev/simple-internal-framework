@@ -1,6 +1,6 @@
 package framework.core.exceptions;
 
-public class BrowserUnavailable extends Exception {
+public class BrowserUnavailable extends RuntimeException {
 
     public BrowserUnavailable() {
         super(

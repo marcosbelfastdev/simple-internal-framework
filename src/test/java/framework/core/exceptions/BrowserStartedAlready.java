@@ -1,6 +1,6 @@
 package framework.core.exceptions;
 
-public class BrowserStartedAlready extends Exception {
+public class BrowserStartedAlready extends RuntimeException {
 
     public BrowserStartedAlready() {
         super(

@@ -1,6 +1,6 @@
 package framework.core.exceptions;
 
-public class BrowserNeverStarted extends Exception {
+public class BrowserNeverStarted extends RuntimeException {
 
     public BrowserNeverStarted() {
         super(

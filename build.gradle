@@ -74,6 +74,7 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: "$seleniumVersion"
     implementation 'com.github.marcosbelfastdev:erbium:2e39f23'
     compile group: 'org.testng', name: 'testng', version: '7.6.0'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.2.3'
 }
         
 
