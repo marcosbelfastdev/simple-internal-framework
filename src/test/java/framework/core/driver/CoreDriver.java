@@ -10,7 +10,7 @@ public class CoreDriver {
     protected WebDriver driver;
     protected String browserType;
 
-    public CoreDriver(String browserType) {
+    public CoreDriver() {
         this.browserType = browserType;
     }
 

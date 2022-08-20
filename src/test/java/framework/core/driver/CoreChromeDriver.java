@@ -6,7 +6,6 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.BrowserType;
 
 import java.io.File;
 import java.util.*;
@@ -31,7 +30,7 @@ public class CoreChromeDriver extends CoreDriver implements ICoreDrivers, IChrom
     }
 
     public CoreChromeDriver() {
-        super(BrowserType.CHROME);
+        super();
         setOptions();
         setPrefs();
     }

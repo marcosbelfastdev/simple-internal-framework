@@ -1,5 +1,6 @@
 package tests;
 
+import framework.applications.PhpTravels;
 import framework.core.browsers.single.BaseBrowser;
 import framework.core.driver.CoreChromeDriver;
 import framework.core.driver.CoreDriver;
@@ -23,18 +24,21 @@ public class SimpleFramework {
 
     @BeforeTest
     public void setup(ITestContext context) {
-        CoreFirefoxBrowser firefox = new CoreFirefoxBrowser();
-        CoreChromeDriver chrome = new CoreChromeDriver();
-        chrome
-                .startIncognito()
-                        .allowPopups()
-                                .disableNotifications()
-                                        .enableAutomation()
-                                                .enableSafeBrowsing()
-                                                        .ignoreCertificateErrors()
-                .build();
-        chrome.open();
-        firefox.open();
+//        CoreFirefoxBrowser firefox = new CoreFirefoxBrowser();
+//        CoreChromeDriver chrome = new CoreChromeDriver();
+//        chrome
+//                .startIncognito()
+//                        .allowPopups()
+//                                .disableNotifications()
+//                                        .enableAutomation()
+//                                                .enableSafeBrowsing()
+//                                                        .ignoreCertificateErrors()
+//                .build();
+//        chrome.open();
+//        firefox.open();
+
+        PhpTravels phpTravels = new PhpTravels(BrowserType.CHROME);
+        
 
 
     }

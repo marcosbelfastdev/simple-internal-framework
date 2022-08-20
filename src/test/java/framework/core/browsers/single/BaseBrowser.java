@@ -1,22 +1,34 @@
 package framework.core.browsers.single;
 
+import com.github.marcosbelfastdev.erbium.core.Driver;
+import framework.core.driver.CoreChromeDriver;
+import framework.core.driver.CoreDriver;
 import framework.core.driver.WebDriverConstrainer;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import static framework.core.exceptions.Errors.end;
 
 public class BaseBrowser {
 
-    private WebDriver driver;
-    protected WebDriverConstrainer webDriverConstrainer;
+    private Driver _driver;
 
-    public BaseBrowser(WebDriver driver) {
-        this.driver = driver;
-        this.webDriverConstrainer = new WebDriverConstrainer(driver);
-    }
-
-    protected WebDriverConstrainer getWebDriverConstrainer() {
-        return webDriverConstrainer;
+    public BaseBrowser(String browserType) {
+        if (browserType.equals(BrowserType.CHROME)) {
+            CoreChromeDriver chrome = new CoreChromeDriver();
+            chrome.ignoreCertificateErrors()
+                    .enableSafeBrowsing()
+                    .enableAutomation()
+                    .disableNotifications()
+                    .startIncognito()
+                    .setPageLoadStrategy(PageLoadStrategy.EAGER)
+                    .suppressDownloadPrompt()
+                    .allowPopups()
+                    .build();
+            chrome.open();
+            _driver = new Driver(chrome.driver());
+        }
     }
 
     /*

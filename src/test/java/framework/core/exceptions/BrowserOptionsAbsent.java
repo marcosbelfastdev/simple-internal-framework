@@ -4,7 +4,7 @@ public class BrowserOptionsAbsent extends RuntimeException {
 
     public BrowserOptionsAbsent() {
         super(
-                "Browser options were not set before starting it."
+                "PhpTravels options were not set before starting it."
         );
     }
 
