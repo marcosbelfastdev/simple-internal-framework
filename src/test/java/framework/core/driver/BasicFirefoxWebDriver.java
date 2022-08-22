@@ -8,31 +8,26 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-public class CoreFirefoxBrowser extends CoreDriver implements ICoreDrivers {
+public class BasicFirefoxWebDriver extends BasicWebDriver implements IBasicWebDriver {
 
-    public CoreFirefoxBrowser() {
+    public BasicFirefoxWebDriver() {
         super();
     }
 
-    @Override
-    public String getBrowserType() {
-        return browserType;
-    }
 
     @Override
     public WebDriver driver() {
-        return driver;
+        return _webDriver;
     }
 
-    @Override
-    public synchronized WebDriver open() {
+
+    public void open() {
         WebDriver driver = launchFirefox(setupFirefox());
         setJavaHook(driver);
-        setDriver(driver);
-        return driver;
+        setWebDriver(driver);
     }
 
-    protected FirefoxOptions setupFirefox() {
+    public FirefoxOptions setupFirefox() {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setBrowserName("firefox");
@@ -68,7 +63,7 @@ public class CoreFirefoxBrowser extends CoreDriver implements ICoreDrivers {
         return firefoxOptions;
     }
 
-    private WebDriver launchFirefox(FirefoxOptions firefoxOptions) {
+    private synchronized WebDriver launchFirefox(FirefoxOptions firefoxOptions) {
         WebDriver webDriver;
         WebDriverManager.firefoxdriver().setup();
         webDriver = new FirefoxDriver(firefoxOptions);

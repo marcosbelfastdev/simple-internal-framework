@@ -5,17 +5,27 @@ import org.openqa.selenium.WebDriver;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
-public class CoreDriver {
+public class BasicWebDriver implements IBasicWebDriver {
 
-    protected WebDriver driver;
-    protected String browserType;
+    protected WebDriver _webDriver;
+    protected String _browserType;
 
-    public CoreDriver() {
-        this.browserType = browserType;
+
+    protected void setWebDriver(WebDriver _webDriver) {
+        this._webDriver = _webDriver;
     }
 
-    protected void setDriver(WebDriver driver) {
-        this.driver = driver;
+    protected void setBrowserType(String _browserType) {
+        _browserType = _browserType;
+    }
+
+    protected String getBrowserType() {
+        return _browserType;
+    }
+
+
+    public WebDriver driver() {
+        return _webDriver;
     }
 
     protected void setJavaHook(WebDriver driver) {
@@ -44,21 +54,21 @@ public class CoreDriver {
     }
 
     public synchronized void quit() {
-        if (driver != null) {
-            for(String window : driver.getWindowHandles()) {
+        if (_webDriver != null) {
+            for(String window : _webDriver.getWindowHandles()) {
                 try {
-                    driver.switchTo().window(window);
-                    driver.close();
+                    _webDriver.switchTo().window(window);
+                    _webDriver.close();
                 } catch (Exception ignored) {
 
                 }
             }
             try {
-                driver.quit();
+                _webDriver.quit();
             } catch (Exception ignored) {
 
             }
-            driver = null;
+            _webDriver = null;
         }
     }
 }

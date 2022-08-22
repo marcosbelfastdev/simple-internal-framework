@@ -13,7 +13,7 @@ import java.util.*;
 import static framework.core.exceptions.Errors.end;
 import static java.util.Objects.isNull;
 
-public class CoreChromeDriver extends CoreDriver implements ICoreDrivers, IChromeBuilder {
+public class BasicChromeWebDriver extends BasicWebDriver implements IChromeBuilder {
 
     ChromeOptions options;
     HashMap<String, Object> prefs;
@@ -29,33 +29,26 @@ public class CoreChromeDriver extends CoreDriver implements ICoreDrivers, IChrom
             this.prefs = new HashMap<>();
     }
 
-    public CoreChromeDriver() {
+    public BasicChromeWebDriver() {
         super();
         setOptions();
         setPrefs();
     }
 
     @Override
-    public String getBrowserType() {
-        return browserType;
-    }
-
-    @Override
     public WebDriver driver() {
-        return driver;
+        return _webDriver;
     }
 
-    @Override
-    public synchronized WebDriver open() {
+    public void open() {
         if (isNull(built))
             end(BrowserOptionsAbsent.class);
         WebDriver driver = launchChrome(options);
         setJavaHook(driver);
-        setDriver(driver);
-        return driver;
+        setWebDriver(driver);
     }
 
-    private WebDriver launchChrome(ChromeOptions chromeOptions) {
+    private synchronized WebDriver launchChrome(ChromeOptions chromeOptions) {
         WebDriver webDriver;
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver(chromeOptions);
@@ -75,37 +68,37 @@ public class CoreChromeDriver extends CoreDriver implements ICoreDrivers, IChrom
     }
 
     @Override
-    public CoreChromeDriver disableNotifications() {
+    public BasicChromeWebDriver disableNotifications() {
         options.addArguments(DISABLE_NOTIFICATIONS);
         return this;
     }
 
     @Override
-    public CoreChromeDriver startIncognito() {
+    public BasicChromeWebDriver startIncognito() {
         options.addArguments(START_INCOGNITO);
         return this;
     }
 
     @Override
-    public CoreChromeDriver ignoreCertificateErrors() {
+    public BasicChromeWebDriver ignoreCertificateErrors() {
         options.addArguments(IGNORE_CERTIFICATE_ERRORS);
         return this;
     }
 
     @Override
-    public CoreChromeDriver enableAutomation() {
+    public BasicChromeWebDriver enableAutomation() {
         options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
         return this;
     }
 
     @Override
-    public CoreChromeDriver enableSafeBrowsing() {
+    public BasicChromeWebDriver enableSafeBrowsing() {
         prefs.put(SAFE_BROWSING_ENABLED, true);
         return this;
     }
 
     @Override
-    public CoreChromeDriver allowPopups() {
+    public BasicChromeWebDriver allowPopups() {
         /*
         have to remember or research what this really does
          */
@@ -114,19 +107,19 @@ public class CoreChromeDriver extends CoreDriver implements ICoreDrivers, IChrom
     }
 
     @Override
-    public CoreChromeDriver suppressDownloadPrompt() {
+    public BasicChromeWebDriver suppressDownloadPrompt() {
         prefs.put(PROMPT_FOR_DOWNLOAD, false);
         return this;
     }
 
     @Override
-    public CoreChromeDriver setPageLoadStrategy(PageLoadStrategy strategy) {
+    public BasicChromeWebDriver setPageLoadStrategy(PageLoadStrategy strategy) {
         options.setPageLoadStrategy(strategy);
         return this;
     }
 
     @Override
-    public CoreChromeDriver setDownloadDirectory(File directory) {
+    public BasicChromeWebDriver setDownloadDirectory(File directory) {
         prefs.put(DOWNLOAD_DIRECTORY, directory);
         return this;
     }

@@ -21,7 +21,7 @@ public class Runner {
 //                            "tests.InputDataFailTest"
 //                            "tests.FormItemsTestAllGoodTest",
 //                            "tests.FormItemsTest"
-                            "tests.SimpleFramework"
+                            "tests.SimpleTest"
 //                            "tests.LoginForcefully"
                     };
 
