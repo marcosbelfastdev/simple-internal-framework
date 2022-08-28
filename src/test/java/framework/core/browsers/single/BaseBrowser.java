@@ -1,10 +1,14 @@
 package framework.core.browsers.single;
 
+import com.github.marcosbelfastdev.erbium.core.Common;
 import com.github.marcosbelfastdev.erbium.core.Driver;
 import framework.core.driver.BasicChromeWebDriver;
 import framework.core.driver.BasicFirefoxWebDriver;
 import framework.core.driver.BasicWebDriver;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.Point;
+
 import java.net.URL;
 import static java.util.Objects.isNull;
 
@@ -109,7 +113,7 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     protected Object afterOpen(Object... objects) {
-
+        driver().setOption(Common.SCREEN_SIZE, new Dimension(1600, 900));
         return this;
     }
 

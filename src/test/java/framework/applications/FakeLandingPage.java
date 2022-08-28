@@ -16,14 +16,14 @@ public class FakeLandingPage extends BaseBrowser {
         }
     }
 
-    @Override
-    public Object afterOpen(Object... objects) {
-        if (!(driver().getWrappedWebDriver() instanceof ChromeDriver))
-            driver().manage().window().fullscreen();
-        else
-            driver().manage().window().maximize();
-        return null;
-    }
+//    @Override
+//    public Object afterOpen(Object... objects) {
+//        if (!(driver().getWrappedWebDriver() instanceof ChromeDriver))
+//            driver().manage().window().fullscreen();
+//        else
+//            driver().manage().window().maximize();
+//        return null;
+//    }
 
     /*
     setBaseUrl(baseUrl)

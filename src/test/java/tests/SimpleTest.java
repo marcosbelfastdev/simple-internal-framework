@@ -1,7 +1,9 @@
 package tests;
 
+import com.github.marcosbelfastdev.erbium.core.Common;
 import framework.applications.FakeLandingPage;
 import framework.applications.Worker;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
@@ -13,10 +15,6 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class SimpleTest {
 
     FakeLandingPage flp = new FakeLandingPage(BrowserType.CHROME);
-    FakeLandingPage flp2 = new FakeLandingPage(BrowserType.CHROME);
-    FakeLandingPage flp3 = new FakeLandingPage(BrowserType.CHROME);
-    FakeLandingPage flp4 = new FakeLandingPage(BrowserType.CHROME);
-    FakeLandingPage flp5 = new FakeLandingPage(BrowserType.CHROME);
 
     /*
     This test extends a BaseVenturusTest class designed to work with 1 browser.
@@ -41,10 +39,9 @@ public class SimpleTest {
     @Test(description = "Demo Test - Test color selection in Treeview")
     public void firstTest() {
         flp.goToBaseUrl();
-        flp2.goToBaseUrl();
-        flp3.goToBaseUrl();
-        flp4.goToBaseUrl();
-        flp5.goToBaseUrl();
+        flp.driver().setOption(Common.SCREEN_SIZE, new Dimension(700,800));
+        flp.driver().reset();
+        System.out.println("Finished.");
     }
 
 
