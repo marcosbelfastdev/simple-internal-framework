@@ -1,4 +1,4 @@
-package tests.erbium.elements;
+package project.applications.applications;
 
 import framework.core.browsers.single.BaseBrowser;
 

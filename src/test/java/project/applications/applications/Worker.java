@@ -1,4 +1,4 @@
-package framework.applications;
+package project.applications.applications;
 
 
 import org.openqa.selenium.remote.BrowserType;
@@ -9,7 +9,11 @@ public class Worker implements Runnable {
 
         @Override
         public void run() {
-            new FakeLandingPage(BrowserType.CHROME).goToBaseUrl();
+            try {
+                new FakeLandingPage(BrowserType.CHROME).goToBaseUrl();
+            } catch (Throwable e) {
+                throw new RuntimeException(e);
+            }
             System.out.println("Rodando worker...");
         }
     }

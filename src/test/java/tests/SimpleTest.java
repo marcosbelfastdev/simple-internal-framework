@@ -1,16 +1,12 @@
 package tests;
 
 import com.github.marcosbelfastdev.erbium.core.Common;
-import framework.applications.FakeLandingPage;
-import framework.applications.Worker;
+import project.applications.applications.FakeLandingPage;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class SimpleTest {
 
@@ -37,7 +33,7 @@ public class SimpleTest {
      */
 
     @Test(description = "Demo Test - Test color selection in Treeview")
-    public void firstTest() {
+    public void firstTest() throws Throwable {
         flp.goToBaseUrl();
         flp.driver().setOption(Common.SCREEN_SIZE, new Dimension(700,800));
         flp.driver().reset();

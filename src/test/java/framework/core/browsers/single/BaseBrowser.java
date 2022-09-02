@@ -58,7 +58,7 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     @Override
-    public void goToBaseUrl() {
+    public void goToBaseUrl() throws Throwable {
         if (isNull(_basic)) {
             open();
         }
@@ -70,7 +70,7 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     @Override
-    public void open() {
+    public void open() throws Throwable {
         if (isNull(_basic)) {
             configureBrowser();
         }
@@ -92,7 +92,7 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     @Override
-    public void restart() {
+    public void restart() throws Throwable {
         if(isNull(_driver))
             open();
         else {
@@ -112,7 +112,7 @@ public class BaseBrowser implements IBaseBrowser {
         return this;
     }
 
-    protected Object afterOpen(Object... objects) {
+    protected Object afterOpen(Object... objects) throws Throwable {
         driver().setOption(Common.SCREEN_SIZE, new Dimension(1600, 900));
         return this;
     }

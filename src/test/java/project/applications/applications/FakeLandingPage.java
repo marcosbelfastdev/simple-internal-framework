@@ -1,7 +1,6 @@
-package framework.applications;
+package project.applications.applications;
 
 import framework.core.browsers.single.BaseBrowser;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.URL;
 

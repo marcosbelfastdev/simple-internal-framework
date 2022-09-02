@@ -72,9 +72,10 @@ ext {
 
 dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: "$seleniumVersion"
-    implementation 'com.github.marcosbelfastdev:erbium:cbfc0afb898a93dd354c37910d35299135dba3b5'
+//    implementation 'com.github.marcosbelfastdev:erbium:9cdb6abbdeca3ba0ebf46ef424ba719b6e5c94f0'
     compile group: 'org.testng', name: 'testng', version: '7.6.0'
     implementation 'io.github.bonigarcia:webdrivermanager:5.2.3'
+    implementation files('/Users/next/IdeaProjects/erbium/build/libs/erbium-4.3.2.jar')
 }
         
 

@@ -10,7 +10,7 @@
     <test name="Test Group">
         <parameter name="browserTypes" value="chrome,chrome"/>
         <classes>
-            <class name="tests.SimpleTest"/>
+            <class name="tests.erbium.elements.Elements"/>
 <!--            <class name="tests.InputDataFailTest"/>-->
         </classes>
     </test>
