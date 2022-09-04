@@ -1,6 +1,6 @@
 Please check package:
 src/test/java/runners
-and edit the Runner.java to add or remove tests.
+and edit the Runner.java to add or remove project.tests.
 
 be careful with spelling
 

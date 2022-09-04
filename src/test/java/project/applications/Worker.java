@@ -1,4 +1,4 @@
-package project.applications.applications;
+package project.applications;
 
 
 import org.openqa.selenium.remote.BrowserType;

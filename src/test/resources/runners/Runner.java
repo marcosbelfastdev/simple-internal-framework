@@ -18,11 +18,11 @@ public class Runner {
              */
             String[] testsToRun =
                     {
-//                            "tests.InputDataFailTest"
-//                            "tests.FormItemsTestAllGoodTest",
-//                            "tests.FormItemsTest"
-                            "tests.SimpleTest"
-//                            "tests.LoginForcefully"
+//                            "project.tests.InputDataFailTest"
+//                            "project.tests.FormItemsTestAllGoodTest",
+//                            "project.tests.FormItemsTest"
+                            "project.tests.SimpleTest"
+//                            "project.tests.LoginForcefully"
                     };
 
             XmlSuite suite = new XmlSuite();

@@ -10,16 +10,16 @@
     <test name="Test Group">
         <parameter name="browserTypes" value="chrome,chrome"/>
         <classes>
-            <class name="tests.erbium.elements.Elements"/>
-<!--            <class name="tests.InputDataFailTest"/>-->
+            <class name="project.tests.erbium.elements.FakeLandingPage1"/>
+<!--            <class name="project.tests.InputDataFailTest"/>-->
         </classes>
     </test>
 
 
 <!--    <test name="Test Group 2">-->
 <!--        <classes>-->
-<!--            <class name="tests.LoginForcefully"/>-->
-<!--            <class name="tests.InputDataFailTest"/>-->
+<!--            <class name="project.tests.LoginForcefully"/>-->
+<!--            <class name="project.tests.InputDataFailTest"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 </suite>

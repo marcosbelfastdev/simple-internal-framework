@@ -1,4 +1,4 @@
-package framework.core.driver;
+package framework.core.utils;
 
 public class SimpleWordListParser {
 

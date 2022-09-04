@@ -1,7 +1,7 @@
-package tests;
+package project.tests;
 
 import com.github.marcosbelfastdev.erbium.core.Common;
-import project.applications.applications.FakeLandingPage;
+import project.applications.FakeLandingPage;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
