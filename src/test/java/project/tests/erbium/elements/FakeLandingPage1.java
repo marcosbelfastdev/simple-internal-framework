@@ -3,6 +3,7 @@ package project.tests.erbium.elements;
 import com.github.marcosbelfastdev.erbium.core.Common;
 import com.github.marcosbelfastdev.erbium.core.Driver;
 import com.github.marcosbelfastdev.erbium.core.Element;
+import com.github.marcosbelfastdev.erbium.core.Timer;
 import framework.core.driver.ViewPort;
 import framework.core.flow.BaseTestAccessors;
 import org.openqa.selenium.By;
@@ -13,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import project.applications.FakeLandingPage;
 import project.pages.FakeLandinPage.AutomationExercisesPage;
+import project.pages.FakeLandinPage.BigPageWithManyElementsPage;
 import project.pages.FakeLandinPage.HomePage;
 
 
@@ -36,13 +38,21 @@ public class FakeLandingPage1 extends BaseTestAccessors {
         {
             var holder = screenHolder(fakeLandingPageApp.driver());
             fakeLandingPageApp.driver().manage().window().setSize(ViewPort.FHD);
+            fakeLandingPageApp.driver().getWrappedWebDriver().manage().window().maximize();
             new HomePage(fakeLandingPageApp.driver()).automationExercises
-                    .setOption(Common.INTERACT_DELAY_AFTER, 3000)
                     .setOption(Common.SUPPRESS_DELAYS, true)
                     .click();
-            new AutomationExercisesPage(fakeLandingPageApp.driver())
-                    .bigPageWithManyElementsLink()
+            new AutomationExercisesPage(fakeLandingPageApp)
+                    .bigPageWithManyElementsLink
                             .click();
+            new BigPageWithManyElementsPage(fakeLandingPageApp.driver())
+//                    .name
+//                        .scrollDownTo()
+//                        .setOption(Common.INTERACT_DELAY_AFTER, 3000)
+//                        .setFocus()
+//                        .setText("Marcos Ghiraldelli");
+        .facebookLink.scrollDownTo().setFocus();
+            Timer.sleep(10000);
 
             holder.restore();
         }
@@ -50,9 +60,5 @@ public class FakeLandingPage1 extends BaseTestAccessors {
 
         System.out.println("Check");
     }
-
-
-
-
 
 }

@@ -2,6 +2,7 @@ package framework.core.browsers.single;
 
 import com.github.marcosbelfastdev.erbium.core.Common;
 import com.github.marcosbelfastdev.erbium.core.Driver;
+import com.github.marcosbelfastdev.erbium.core.PlaybackOptions;
 import framework.core.driver.BasicChromeWebDriver;
 import framework.core.driver.BasicFirefoxWebDriver;
 import framework.core.driver.BasicWebDriver;
@@ -83,6 +84,9 @@ public class BaseBrowser implements IBaseBrowser {
                 ((BasicFirefoxWebDriver)_basic).open();
                 break;
         }
+        PlaybackOptions playbackOptions = PlaybackOptions.init();
+        playbackOptions.setOption(Common.SUPPRESS_DELAYS, true);
+        playbackOptions.setOption(Common.FORCE_FULL_RELOAD, true);
         _driver = new Driver(_basic.driver());
         afterOpen();
     }
