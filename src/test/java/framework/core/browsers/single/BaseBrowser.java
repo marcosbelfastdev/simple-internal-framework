@@ -85,10 +85,9 @@ public class BaseBrowser implements IBaseBrowser {
                 ((BasicFirefoxWebDriver)_basic).open();
                 break;
         }
-//        PlaybackOptions playbackOptions = PlaybackOptions.init();
-//        playbackOptions.setOption(Common.SUPPRESS_DELAYS, true);
-//        playbackOptions.setOption(Common.FORCE_FULL_RELOAD, true);
-        _basic.driver().manage().window().setSize(ViewPort.VGA);
+        PlaybackOptions playbackOptions = PlaybackOptions.init();
+        playbackOptions.setOption(Common.SUPPRESS_DELAYS, true);
+        _basic.driver().manage().window().setSize(ViewPort.SHD);
         _driver = new Driver(_basic.driver());
         afterOpen();
     }
@@ -108,8 +107,11 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     public void quit() {
-        if (!isNull(_driver))
+        if (!isNull(_driver)) {
             _driver.quit();
+            _driver = null;
+            _basic = null;
+        }
         afterQuit();
     }
 

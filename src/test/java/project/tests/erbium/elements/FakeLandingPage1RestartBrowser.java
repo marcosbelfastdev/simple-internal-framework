@@ -14,7 +14,7 @@ import project.pages.FakeLandinPage.BigPageWithManyElementsPage;
 import project.pages.FakeLandinPage.HomePage;
 
 
-public class FakeLandingPage1 extends BaseTestAccessors {
+public class FakeLandingPage1RestartBrowser extends BaseTestAccessors {
 
     FakeLandingPage browser = new FakeLandingPage(BrowserType.CHROME);
 
@@ -32,26 +32,31 @@ public class FakeLandingPage1 extends BaseTestAccessors {
     @Test(description = "Demo Test - Test color selection in Treeview")
     public void firstTest() throws Throwable {
         {
-            var holder = screenHolder(browser.driver());
-            browser.driver().manage().window().setSize(ViewPort.SHD);
             var homePage = new HomePage(browser.driver());
             homePage.automationExercises
+                    .setOption(Common.SUPPRESS_DELAYS, true)
+                    .click();
+            browser.restart();
+
+            var holder = screenHolder(browser.driver());
+            browser.goToBaseUrl();
+            new HomePage(browser).automationExercises
                     .setOption(Common.SUPPRESS_DELAYS, true)
                     .click();
             var automationExercisesPage = new AutomationExercisesPage(browser);
             automationExercisesPage.bigPageWithManyElementsLink.click();
             var bigPage = new BigPageWithManyElementsPage(browser);
             bigPage.name.scrollDownTo().setText("Some Name");
-            homePage.facebookLink
+            new HomePage(browser).facebookLink
                    .scrollDownTo()
                    .setOption(Common.SUPPRESS_DELAYS, false)
-                   .setOption(Common.INTERACT_DELAY_AFTER, 5000)
-                   .setFocus();
+                    .setFocus();
 
             holder.restore();
         }
 
         System.out.println("Place a breakpooint here");
+
     }
 
     @AfterClass
