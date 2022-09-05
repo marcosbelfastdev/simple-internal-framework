@@ -15,7 +15,7 @@ import project.pages.FakeLandinPage.BigPageWithManyElementsPage;
 import project.pages.FakeLandinPage.HomePage;
 
 
-public class FakeLandingPage1 extends BaseTestAccessors {
+public class FakeLandingPage2 extends BaseTestAccessors {
 
     FakeLandingPage browser = new FakeLandingPage(BrowserType.CHROME);
 
