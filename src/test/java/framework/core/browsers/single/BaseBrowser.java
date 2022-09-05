@@ -60,9 +60,13 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     @Override
-    public void goToBaseUrl() throws Throwable {
+    public void goToBaseUrl() {
         if (isNull(_basic)) {
-            open();
+            try {
+                open();
+            } catch (Throwable e) {
+                throw new RuntimeException(e);
+            }
         }
         beforeGoToBaseUrl();
         if (!isNull(_baseUrl))

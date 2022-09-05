@@ -10,7 +10,7 @@ public class HomePage extends BasePage {
 
 
 
-    public HomePage(Driver driver) throws Throwable {
+    public HomePage(Driver driver) {
         super(driver);
     }
 
