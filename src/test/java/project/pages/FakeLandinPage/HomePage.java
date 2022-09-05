@@ -13,6 +13,9 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public final Element automationExercises = new Element($driver, By.linkText("Automation Exercises"));
+    public final Element automationExercises =
+            new Element($driver, By.linkText("Automation Exercises"));
+    public final Element facebookLink =
+            new Element($driver, By.linkText("Facebook"));
 
 }

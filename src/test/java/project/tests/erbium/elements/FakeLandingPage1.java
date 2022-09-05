@@ -1,13 +1,8 @@
 package project.tests.erbium.elements;
 
 import com.github.marcosbelfastdev.erbium.core.Common;
-import com.github.marcosbelfastdev.erbium.core.Driver;
-import com.github.marcosbelfastdev.erbium.core.Element;
-import com.github.marcosbelfastdev.erbium.core.Timer;
 import framework.core.driver.ViewPort;
 import framework.core.flow.BaseTestAccessors;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
@@ -20,11 +15,11 @@ import project.pages.FakeLandinPage.HomePage;
 
 public class FakeLandingPage1 extends BaseTestAccessors {
 
-    FakeLandingPage fakeLandingPageApp = new FakeLandingPage(BrowserType.CHROME);
+    FakeLandingPage browser = new FakeLandingPage(BrowserType.CHROME);
 
     @BeforeTest
     public void setup(ITestContext context) throws Throwable {
-        fakeLandingPageApp.goToBaseUrl();
+        browser.goToBaseUrl();
     }
 
     /*
@@ -36,29 +31,26 @@ public class FakeLandingPage1 extends BaseTestAccessors {
     @Test(description = "Demo Test - Test color selection in Treeview")
     public void firstTest() throws Throwable {
         {
-            var holder = screenHolder(fakeLandingPageApp.driver());
-            fakeLandingPageApp.driver().manage().window().setSize(ViewPort.FHD);
-            fakeLandingPageApp.driver().getWrappedWebDriver().manage().window().maximize();
-            new HomePage(fakeLandingPageApp.driver()).automationExercises
+            var holder = screenHolder(browser.driver());
+            browser.driver().manage().window().setSize(ViewPort.SHD);
+            var homePage = new HomePage(browser.driver());
+            homePage.automationExercises
                     .setOption(Common.SUPPRESS_DELAYS, true)
                     .click();
-            new AutomationExercisesPage(fakeLandingPageApp)
-                    .bigPageWithManyElementsLink
-                            .click();
-            new BigPageWithManyElementsPage(fakeLandingPageApp.driver())
-//                    .name
-//                        .scrollDownTo()
-//                        .setOption(Common.INTERACT_DELAY_AFTER, 3000)
-//                        .setFocus()
-//                        .setText("Marcos Ghiraldelli");
-        .facebookLink.scrollDownTo().setFocus();
-            Timer.sleep(10000);
+            var automationExercisesPage = new AutomationExercisesPage(browser);
+            automationExercisesPage.bigPageWithManyElementsLink.click();
+            var bigPage = new BigPageWithManyElementsPage(browser);
+            bigPage.name.scrollDownTo().setText("Some Name");
+            homePage.facebookLink
+                   .scrollDownTo()
+                   .setOption(Common.SUPPRESS_DELAYS, false)
+                   .setOption(Common.INTERACT_DELAY_AFTER, 5000)
+                   .setFocus();
 
             holder.restore();
         }
 
-
-        System.out.println("Check");
+        System.out.println("Place a breakpooint here");
     }
 
 }

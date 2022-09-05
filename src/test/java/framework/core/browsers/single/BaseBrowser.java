@@ -6,6 +6,7 @@ import com.github.marcosbelfastdev.erbium.core.PlaybackOptions;
 import framework.core.driver.BasicChromeWebDriver;
 import framework.core.driver.BasicFirefoxWebDriver;
 import framework.core.driver.BasicWebDriver;
+import framework.core.driver.ViewPort;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.Point;
@@ -84,9 +85,10 @@ public class BaseBrowser implements IBaseBrowser {
                 ((BasicFirefoxWebDriver)_basic).open();
                 break;
         }
-        PlaybackOptions playbackOptions = PlaybackOptions.init();
-        playbackOptions.setOption(Common.SUPPRESS_DELAYS, true);
-        playbackOptions.setOption(Common.FORCE_FULL_RELOAD, true);
+//        PlaybackOptions playbackOptions = PlaybackOptions.init();
+//        playbackOptions.setOption(Common.SUPPRESS_DELAYS, true);
+//        playbackOptions.setOption(Common.FORCE_FULL_RELOAD, true);
+        _basic.driver().manage().window().setSize(ViewPort.VGA);
         _driver = new Driver(_basic.driver());
         afterOpen();
     }
