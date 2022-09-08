@@ -1,6 +1,5 @@
-package project.pages.FakeLandinPage;
+package project.applications.FakeLanding.pages;
 
-import com.github.marcosbelfastdev.erbium.core.Driver;
 import com.github.marcosbelfastdev.erbium.core.Element;
 import framework.core.base.BasePage;
 import framework.core.browsers.single.BaseBrowser;

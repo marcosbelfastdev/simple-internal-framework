@@ -1,7 +1,7 @@
 package project.tests;
 
 import com.github.marcosbelfastdev.erbium.core.Common;
-import project.applications.FakeLandingPage;
+import project.applications.FakeLanding.FakeLandingApp;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class SimpleTest {
 
-    FakeLandingPage flp = new FakeLandingPage(BrowserType.CHROME);
+    FakeLandingApp flp = new FakeLandingApp(BrowserType.CHROME);
 
     /*
     This test extends a BaseVenturusTest class designed to work with 1 browser.

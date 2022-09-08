@@ -1,4 +1,4 @@
-package project.pages.FakeLandinPage;
+package project.applications.Apple.pages;
 
 import com.github.marcosbelfastdev.erbium.core.Driver;
 import com.github.marcosbelfastdev.erbium.core.Element;
@@ -18,9 +18,6 @@ public class HomePage extends BasePage {
         super(baseBrowser.driver());
     }
 
-    public final Element automationExercises =
-            new Element($driver, By.linkText("Automation Exercises"));
-    public final Element facebookLink =
-            new Element($driver, By.linkText("Facebook"));
-
+    public final Element contactApple =
+            new Element($driver, By.linkText("Contact Apple"));
 }

@@ -1,22 +1,21 @@
 package project.tests.erbium.elements;
 
 import com.github.marcosbelfastdev.erbium.core.Common;
-import framework.core.driver.ViewPort;
 import framework.core.flow.BaseTestAccessors;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import project.applications.FakeLandingPage;
-import project.pages.FakeLandinPage.AutomationExercisesPage;
-import project.pages.FakeLandinPage.BigPageWithManyElementsPage;
-import project.pages.FakeLandinPage.HomePage;
+import project.applications.FakeLanding.FakeLandingApp;
+import project.applications.FakeLanding.pages.AutomationExercisesPage;
+import project.applications.FakeLanding.pages.BigPageWithManyElementsPage;
+import project.applications.FakeLanding.pages.HomePage;
 
 
 public class FakeLandingPage1RestartBrowser extends BaseTestAccessors {
 
-    FakeLandingPage browser = new FakeLandingPage(BrowserType.CHROME);
+    FakeLandingApp browser = new FakeLandingApp(BrowserType.CHROME);
 
     @BeforeTest
     public void setup(ITestContext context) throws Throwable {

@@ -2,15 +2,16 @@ package project.applications;
 
 
 import org.openqa.selenium.remote.BrowserType;
+import project.applications.FakeLanding.FakeLandingApp;
 
 public class Worker implements Runnable {
 
-        FakeLandingPage flp;
+        FakeLandingApp flp;
 
         @Override
         public void run() {
             try {
-                new FakeLandingPage(BrowserType.CHROME).goToBaseUrl();
+                new FakeLandingApp(BrowserType.CHROME).goToBaseUrl();
             } catch (Throwable e) {
                 throw new RuntimeException(e);
             }

@@ -1,12 +1,12 @@
-package project.applications;
+package project.applications.FakeLanding;
 
 import framework.core.browsers.single.BaseBrowser;
 
 import java.net.URL;
 
-public class FakeLandingPage extends BaseBrowser {
+public class FakeLandingApp extends BaseBrowser {
 
-    public FakeLandingPage(String browserType) {
+    public FakeLandingApp(String browserType) {
         super(browserType);
         try {
             setBaseUrl(new URL("https://www.ultimateqa.com/fake-landing-page"));

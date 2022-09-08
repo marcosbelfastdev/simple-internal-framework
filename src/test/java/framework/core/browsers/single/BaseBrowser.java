@@ -111,6 +111,7 @@ public class BaseBrowser implements IBaseBrowser {
     }
 
     public void quit() {
+        beforeQuit();
         if (!isNull(_driver)) {
             _driver.quit();
             _driver = null;
@@ -132,6 +133,10 @@ public class BaseBrowser implements IBaseBrowser {
     protected Object afterQuit(Object... objects) {
 
         return this;
+    }
+
+    protected Object beforeQuit() {
+        return null;
     }
 
 

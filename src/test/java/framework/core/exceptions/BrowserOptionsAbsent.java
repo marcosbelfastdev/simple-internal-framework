@@ -4,7 +4,7 @@ public class BrowserOptionsAbsent extends RuntimeException {
 
     public BrowserOptionsAbsent() {
         super(
-                "FakeLandingPage options were not set before starting it."
+                "FakeLandingApp options were not set before starting it."
         );
     }
 
