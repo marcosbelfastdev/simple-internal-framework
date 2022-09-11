@@ -1,5 +1,6 @@
 package project.applications.Apple;
 
+import com.github.marcosbelfastdev.erbium.core.Common;
 import framework.core.browsers.single.BaseBrowser;
 
 import java.net.URL;
@@ -10,8 +11,11 @@ public class AppleApp extends BaseBrowser {
         super(browserType);
         try {
             setBaseUrl(new URL("http://www.apple.com"));
+            driver().setOption(Common.SEARCHSCROLL_FACTOR, 0.20);
         } catch (Exception ignored) {
 
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
         }
     }
 

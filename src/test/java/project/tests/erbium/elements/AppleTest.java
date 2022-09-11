@@ -31,7 +31,7 @@ public class AppleTest extends BaseTestAccessors {
     public void firstTest() throws Throwable {
 
         var holder = screenHolder(browser.driver());
-        browser.driver().manage().window().setSize(ViewPort.SHD);
+        browser.driver().manage().window().setSize(ViewPort.UHD);
         var homePage = new HomePage(browser);
         homePage.contactApple
                 .setOption(Common.SUPPRESS_DELAYS, true)
