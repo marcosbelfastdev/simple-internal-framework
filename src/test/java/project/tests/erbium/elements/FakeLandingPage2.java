@@ -51,7 +51,7 @@ public class FakeLandingPage2 extends BaseTestAccessors {
             holder.restore();
         }
 
-        System.out.println("Place a breakpooint here");
+        System.out.println("Place a breakpoint here");
     }
 
     @AfterClass
