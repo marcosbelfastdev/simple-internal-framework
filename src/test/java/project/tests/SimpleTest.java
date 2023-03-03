@@ -50,7 +50,7 @@ public class SimpleTest {
                 "ls -la",           Ssh.ENTER,
                 "ifconfig",          Ssh.ENTER,
                 "ls",               Ssh.ENTER,
-                "du / -h",          Ssh.ENTER
+                "clear",            Ssh.ENTER
         );
         String allResponses = ssh.getAllResponses();
         System.out.println(allResponses);
