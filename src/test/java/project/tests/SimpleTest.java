@@ -1,12 +1,13 @@
 package project.tests;
 
-import com.github.marcosbelfastdev.erbium.core.Common;
+import framework.core.base.Ssh;
 import project.applications.FakeLanding.FakeLandingApp;
-import org.openqa.selenium.Dimension;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.io.IOException;
 
 public class SimpleTest {
 
@@ -32,16 +33,29 @@ public class SimpleTest {
     in a horizontal manner, without the need for separate page objects, for simplicity reasons.
      */
 
-    @Test(description = "Demo Test - Test color selection in Treeview")
-    public void firstTest() throws Throwable {
-        flp.goToBaseUrl();
-        flp.driver().setOption(Common.SCREEN_SIZE, new Dimension(700,800));
-        flp.driver().reset();
-        System.out.println("Finished.");
+//    @Test(description = "Demo Test - Test color selection in Treeview")
+//    public void firstTest() throws Throwable {
+//        flp.goToBaseUrl();
+//        flp.driver().setOption(Common.SCREEN_SIZE, new Dimension(700,800));
+//        flp.driver().reset();
+//        System.out.println("Finished.");
+//    }
+
+    @Test(description = "Testar conexão com ssh")
+    public void connectSsh() throws InterruptedException, IOException {
+
+        Ssh ssh = new Ssh("10.211.55.9", 22, "parallels", "oinfante", 10000);
+        ssh.connect();
+        ssh.mtype(
+                "ls -la",           Ssh.ENTER,
+                "ifconfig",          Ssh.ENTER,
+                "ls",               Ssh.ENTER,
+                "du / -h",          Ssh.ENTER
+        );
+        String allResponses = ssh.getAllResponses();
+        System.out.println(allResponses);
+        String lastResponse = ssh.getLastResponse();
+        allResponses = ssh.getAllResponses();
     }
-
-
-
-
 
 }

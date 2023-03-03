@@ -3,6 +3,7 @@ package project.tests.erbium.elements;
 import com.github.marcosbelfastdev.erbium.core.Common;
 import framework.core.driver.ViewPort;
 import framework.core.flow.BaseTestAccessors;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.BrowserType;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
@@ -10,6 +11,8 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import project.applications.Apple.AppleApp;
 import project.applications.Apple.pages.HomePage;
+
+import java.util.Calendar;
 
 
 public class AppleTest extends BaseTestAccessors {
@@ -32,6 +35,7 @@ public class AppleTest extends BaseTestAccessors {
 
         var holder = screenHolder(browser.driver());
         browser.driver().manage().window().setSize(ViewPort.UHD);
+        browser.driver().findFirstElement(By.name("document[file]")).setText("Teste");
         var homePage = new HomePage(browser);
         homePage.contactApple
                 .setOption(Common.SUPPRESS_DELAYS, true)
