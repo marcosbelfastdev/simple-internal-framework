@@ -8,9 +8,9 @@
 
 
     <test name="Test Group">
-        <parameter name="browserTypes" value="firefox,firefox"/>
+        <parameter name="browserTypes" value="chrome,chrome"/>
         <classes>
-            <class name="project.tests.erbium.elements.FakeLandingPage1"/>
+            <class name="project.tests.erbium.elements.NewTest"/>
         </classes>
     </test>
 

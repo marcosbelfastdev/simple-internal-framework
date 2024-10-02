@@ -67,14 +67,14 @@ sourceSets {
 }
 
 ext {
-    seleniumVersion = '3.6.0'
+    seleniumVersion = '4.0.0'
 }
 
 dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: "$seleniumVersion"
     implementation 'com.github.marcosbelfastdev:erbium:6794094ca3f30500eb5c4a5df30d603b1ff7d687'
     compile group: 'org.testng', name: 'testng', version: '7.6.0'
-    implementation 'io.github.bonigarcia:webdrivermanager:5.2.3'
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
     implementation 'com.jcraft:jsch:0.1.55'
 //    implementation files('/Users/next/IdeaProjects/erbium/build/libs/erbium-4.3.2.jar')
 }
