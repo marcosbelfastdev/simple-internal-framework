@@ -2,15 +2,15 @@
 
 <suite name="Suite Teste" parallel="tests" thread-count="1">
 
-    <listeners>
-        <listener class-name="framework.listeners.BaseListener"/>
-    </listeners>
+<!--    <listeners>-->
+<!--        <listener class-name="framework.listeners.BaseListener"/>-->
+<!--    </listeners>-->
 
 
     <test name="Test Group">
-        <parameter name="browserTypes" value="chrome,chrome"/>
+
         <classes>
-            <class name="project.tests.erbium.elements.AppleTest"/>
+            <class name="project.tests.AppiumTest"/>
         </classes>
     </test>
 
